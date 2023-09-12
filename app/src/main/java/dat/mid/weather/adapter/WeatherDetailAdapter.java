@@ -96,21 +96,21 @@ public class WeatherDetailAdapter extends RecyclerView.Adapter<WeatherDetailAdap
         }
         holder.conditionTv.setText(condition.getCondition());
         if (weather.getCondition_day().toLowerCase().contains("sunny".toLowerCase())) {
-            Drawable drawable = ContextCompat.getDrawable(context, R.drawable.img_weather_sun);
+            Drawable drawable = ContextCompat.getDrawable(context, R.drawable.img_wea_sun);
             holder.weatherIcon.setImageDrawable(drawable);
         }
         if (holder.conditionTv.getText().toString().toLowerCase().contains("sunny".toLowerCase())) {
-            Drawable drawable = ContextCompat.getDrawable(context, R.drawable.img_weather_sun);
+            Drawable drawable = ContextCompat.getDrawable(context, R.drawable.img_wea_sun);
             holder.weatherHourImg.setImageDrawable(drawable);
         } else if (holder.conditionTv.getText().toString().toLowerCase().contains("clear".toLowerCase())) {
-            Drawable drawable = ContextCompat.getDrawable(context, R.drawable.img_weather_clear);
+            Drawable drawable = ContextCompat.getDrawable(context, R.drawable.img_clear);
             holder.weatherHourImg.setImageDrawable(drawable);
         } else if (holder.conditionTv.getText().toString().toLowerCase().contains("Thundery".toLowerCase())) {
-            Drawable drawable = ContextCompat.getDrawable(context, R.drawable.img_weather_thundery);
+            Drawable drawable = ContextCompat.getDrawable(context, R.drawable.img_wea_thundery);
             holder.weatherHourImg.setImageDrawable(drawable);
         }
         if (holder.conditionTv.getText().toString().toLowerCase().contains("rain".toLowerCase())) {
-            Drawable drawable = ContextCompat.getDrawable(context, R.drawable.img_weather_rain);
+            Drawable drawable = ContextCompat.getDrawable(context, R.drawable.img_wea_rain);
             holder.weatherHourImg.setImageDrawable(drawable);
         }
         String date = weather.getDate();

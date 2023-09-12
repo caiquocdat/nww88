@@ -17,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_gravity="bottom"
-        android:background="@drawable/bottom_bar_bgr"
+        android:background="@drawable/bt_bar_bgr"
         android:orientation="horizontal"
         android:paddingTop="14dp"
         android:paddingBottom="15dp"
@@ -61,7 +61,7 @@
                 android:id="@+id/locationImg"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
-                android:src="@drawable/img_location" />
+                android:src="@drawable/img_loca" />
 
             <TextView
                 android:fontFamily="@font/poppins"

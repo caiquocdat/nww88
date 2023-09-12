@@ -27,7 +27,7 @@
             android:id="@+id/timeTv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Bây giờ"
+            android:text="Now"
             android:textColor="#A1A1A1"
             android:fontFamily="@font/poppins"
             android:textSize="10sp"/>

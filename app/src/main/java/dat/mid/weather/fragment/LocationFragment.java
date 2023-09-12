@@ -32,7 +32,7 @@ import dat.mid.weather.adapter.OnDeletedListener;
 import dat.mid.weather.adapter.WeatherAdapter;
 import dat.mid.weather.api.RetrofitClient;
 import dat.mid.weather.api.WeatherService;
-import dat.mid.weather.data.InfoLocationDatabaseHelper;
+import dat.mid.weather.data.DatabaseHelper;
 import dat.mid.weather.model.InfoResponse;
 import dat.mid.weather.model.WeatherResponse;
 import com.google.android.gms.common.api.ApiException;
@@ -71,68 +71,6 @@ public class LocationFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_location, container, false);
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-//            if (ActivityCompat.checkSelfPermission(getContext(), android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-//                // READ_EXTERNAL_STORAGE permission has not been granted.
-//                if (isGPSEnabled()) {
-//
-//                    LocationServices.getFusedLocationProviderClient(getActivity())
-//                            .requestLocationUpdates(locationRequest, new LocationCallback() {
-//                                @Override
-//                                public void onLocationResult(@NonNull LocationResult locationResult) {
-//                                    super.onLocationResult(locationResult);
-//
-//                                    LocationServices.getFusedLocationProviderClient(getActivity())
-//                                            .removeLocationUpdates(this);
-//
-//                                    if (locationResult != null && locationResult.getLocations().size() > 0) {
-//
-//                                        FusedLocationProviderClient fusedLocationClient = LocationServices.getFusedLocationProviderClient(getActivity());
-//                                        if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-//                                            // TODO: Consider calling
-//                                            //    ActivityCompat#requestPermissions
-//                                            // here to request the missing permissions, and then overriding
-//                                            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-//                                            //                                          int[] grantResults)
-//                                            // to handle the case where the user grants the permission. See the documentation
-//                                            // for ActivityCompat#requestPermissions for more details.
-//                                            return;
-//                                        }
-//                                        fusedLocationClient.getLastLocation().addOnSuccessListener(new OnSuccessListener<Location>() {
-//                                            @Override
-//                                            public void onSuccess(Location location) {
-//                                                if (location != null) {
-//                                                    LatLng currentLatLng = new LatLng(location.getLatitude(), location.getLongitude());
-//                                                    Geocoder geocoder = new Geocoder(getContext(), Locale.getDefault());
-//                                                    List<Address> addresses = null;
-//                                                    try {
-//                                                        addresses = geocoder.getFromLocation(currentLatLng.latitude, currentLatLng.longitude, 1);
-//                                                    } catch (IOException e) {
-//                                                        e.printStackTrace();
-//                                                    }
-//                                                    Log.d("Test_8", "lal: " + currentLatLng.latitude + ", long: " + currentLatLng.longitude);
-//
-//                                                    if (addresses != null && !addresses.isEmpty()) {
-//                                                        Address address = addresses.get(0);
-//                                                        String cityName = address.getSubAdminArea();
-//                                                        setUpInfoLocation(cityName);
-//                                                        // Use the city name as needed
-//                                                    }
-//                                                }
-//                                            }
-//                                        });
-//                                    }
-//                                }
-//                            }, Looper.getMainLooper());
-//
-//                } else {
-//                    turnOnGPS();
-//                }
-//            } else {
-//                requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION_PERMISSION);
-//
-//            }
-//        }
 
         locationRcv = view.findViewById(R.id.locationRcv);
         locationEdt = view.findViewById(R.id.locationEdt);
@@ -140,15 +78,10 @@ public class LocationFragment extends Fragment {
         doneTv = view.findViewById(R.id.doneTv);
         searchImg = view.findViewById(R.id.searchImg);
         locationRcv.setLayoutManager(new LinearLayoutManager(getActivity()));
-        InfoLocationDatabaseHelper db = new InfoLocationDatabaseHelper(getActivity());
+        DatabaseHelper db = new DatabaseHelper(getActivity());
         List<InfoResponse> infoLocationResponseList = db.getAllWeather();
 
-//
-//        if (isGPSEnabled()) {
-//
-//        } else {
-//            turnOnGPS();
-//        }
+
         if (ContextCompat.checkSelfPermission(getActivity(), android.Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED) {
             FusedLocationProviderClient fusedLocationClient = LocationServices.getFusedLocationProviderClient(getActivity());
@@ -205,7 +138,7 @@ public class LocationFragment extends Fragment {
         editTv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                InfoLocationDatabaseHelper db = new InfoLocationDatabaseHelper(getActivity());
+                DatabaseHelper db = new DatabaseHelper(getActivity());
                 List<InfoResponse> infoLocationResponseList = db.getAllWeather();
                 weatherAdapter = new WeatherAdapter(infoLocationResponseList, getActivity(), "true");
                 weatherAdapter.notifyDataSetChanged();
@@ -216,7 +149,7 @@ public class LocationFragment extends Fragment {
                     @Override
                     public void onItemDelect(String check) {
                         if (check.equals("true")) {
-                            InfoLocationDatabaseHelper db = new InfoLocationDatabaseHelper(getActivity());
+                            DatabaseHelper db = new DatabaseHelper(getActivity());
                             List<InfoResponse> infoLocationResponseList = db.getAllWeather();
                             // Create adapter and set it to RecyclerView
                             weatherAdapter = new WeatherAdapter(infoLocationResponseList, getActivity(), "true");
@@ -229,7 +162,7 @@ public class LocationFragment extends Fragment {
         doneTv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                InfoLocationDatabaseHelper db = new InfoLocationDatabaseHelper(getActivity());
+                DatabaseHelper db = new DatabaseHelper(getActivity());
                 List<InfoResponse> infoLocationResponseList = db.getAllWeather();
                 weatherAdapter = new WeatherAdapter(infoLocationResponseList, getActivity(), "false");
                 weatherAdapter.notifyDataSetChanged();
@@ -322,21 +255,14 @@ public class LocationFragment extends Fragment {
                     infoLocationResponse.setName(weather.getLocation().getName());
                     infoLocationResponse.setText(weather.getCurrent().getCondition().getText());
                     infoLocationResponse.setTemperatureCelsius(weather.getCurrent().getTemperatureCelsius());
-                    InfoLocationDatabaseHelper db = new InfoLocationDatabaseHelper(getActivity());
+                    DatabaseHelper db = new DatabaseHelper(getActivity());
                     db.insertWeather(infoLocationResponse);
                     List<InfoResponse> infoLocationResponseList = db.getAllWeather();
                     // Create adapter and set it to RecyclerView
                     weatherAdapter = new WeatherAdapter(infoLocationResponseList, getActivity(), "false");
                     locationRcv.setAdapter(weatherAdapter);
 
-//                            List<InfoLocationResponse> weatherList = new ArrayList<>();
-//                            weatherList.add(weather);
-//                            Log.d("Test_2", "onResponse: "+weatherList.size());
 
-
-                    // Create adapter and set it to RecyclerView
-//                            weatherAdapter = new WeatherAdapter(getActivity(), weatherList);
-//                            locationRcv.setAdapter(weatherAdapter);
 
                 }
             }
@@ -350,7 +276,7 @@ public class LocationFragment extends Fragment {
 
     void setUpInfoLocation(String location) {
         WeatherService weatherService_new = RetrofitClient.getWeatherService();
-        InfoLocationDatabaseHelper db = new InfoLocationDatabaseHelper(getActivity());
+        DatabaseHelper db = new DatabaseHelper(getActivity());
         List<InfoResponse> infoLocationResponseList = db.getAllWeather();
         if (infoLocationResponseList.size() == 0) {
             Call<WeatherResponse> call_new = weatherService_new.getCurrentWeather("55aa92d554f64328a5820946231707", location);
@@ -367,7 +293,7 @@ public class LocationFragment extends Fragment {
                         infoLocationResponse.setName(weather.getLocation().getName());
                         infoLocationResponse.setText(weather.getCurrent().getCondition().getText());
                         infoLocationResponse.setTemperatureCelsius(weather.getCurrent().getTemperatureCelsius());
-                        InfoLocationDatabaseHelper db = new InfoLocationDatabaseHelper(getActivity());
+                        DatabaseHelper db = new DatabaseHelper(getActivity());
                         db.insertWeather(infoLocationResponse);
                         List<InfoResponse> infoLocationResponseList = db.getAllWeather();
                         // Create adapter and set it to RecyclerView

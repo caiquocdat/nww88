@@ -92,13 +92,13 @@ public class WeatherDayAdapter extends RecyclerView.Adapter<WeatherDayAdapter.Fo
             Drawable drawable = ContextCompat.getDrawable(context, R.drawable.img_rain);
             holder.rainImg.setImageDrawable(drawable);
         } else if (forecastData.getHourlyForecasts().get(position).getCondition().toLowerCase().contains("clear".toLowerCase())) {
-            Drawable drawable = ContextCompat.getDrawable(context, R.drawable.img_clear);
+            Drawable drawable = ContextCompat.getDrawable(context, R.drawable.img_cle);
             holder.rainImg.setImageDrawable(drawable);
         } else if (forecastData.getHourlyForecasts().get(position).getCondition().toLowerCase().contains("Sunny".toLowerCase())) {
             Drawable drawable = ContextCompat.getDrawable(context, R.drawable.img_sun);
             holder.rainImg.setImageDrawable(drawable);
         } else if (forecastData.getHourlyForecasts().get(position).getCondition().toLowerCase().contains("cloudy".toLowerCase())) {
-            Drawable drawable = ContextCompat.getDrawable(context, R.drawable.img_more_cloud);
+            Drawable drawable = ContextCompat.getDrawable(context, R.drawable.img_more_clo);
             holder.rainImg.setImageDrawable(drawable);
         }
     }

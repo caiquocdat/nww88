@@ -22,7 +22,7 @@
                 android:id="@+id/dayTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Vietnam"
+                android:text="Country"
                 android:textColor="@color/white"
                 android:fontFamily="@font/poppins"
                 android:textSize="10sp"/>

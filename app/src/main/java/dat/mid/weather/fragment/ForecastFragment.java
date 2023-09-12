@@ -22,7 +22,7 @@ import dat.mid.weather.adapter.OnDayListener;
 import dat.mid.weather.adapter.OnDeletedListener;
 import dat.mid.weather.adapter.WeatherDayAdapter;
 import dat.mid.weather.adapter.WeatherDetailAdapter;
-import dat.mid.weather.data.InfoLocationDatabaseHelper;
+import dat.mid.weather.data.DatabaseHelper;
 import dat.mid.weather.model.CurrentResponse;
 import dat.mid.weather.model.DayResponse;
 import dat.mid.weather.model.HourlyResponse;
@@ -70,7 +70,6 @@ public class ForecastFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_forecast, container, false);
         dayRcv = view.findViewById(R.id.dayRcv);
         detailRcv = view.findViewById(R.id.detailRcv);
-//        detailInfoRcv = view.findViewById(R.id.detailInfoRcv);
         view_detail = view.findViewById(R.id.view);
         viewPager=view.findViewById(R.id.viewPager);
         pageIndicatorView = view.findViewById(R.id.pageIndicatorView);
@@ -82,7 +81,7 @@ public class ForecastFragment extends Fragment {
         layoutManager_info = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
         dayRcv.setLayoutManager(layoutManager);
         detailRcv.setLayoutManager(layoutManager_detail);
-//        detailInfoRcv.setLayoutManager(layoutManager_info);
+
 
 
         getWeatherData();
@@ -95,7 +94,7 @@ public class ForecastFragment extends Fragment {
             @Override
             public void onPageSelected(int position) {
                 Log.d("Test_33", "onPageSelected: "+position);
-                InfoLocationDatabaseHelper db = new InfoLocationDatabaseHelper(getActivity());
+                DatabaseHelper db = new DatabaseHelper(getActivity());
                 List<String> getAllName = db.getAllNames();
                 getWeatherDataClick(getAllName.get(position));
             }
@@ -109,7 +108,7 @@ public class ForecastFragment extends Fragment {
     }
 
     private void getWeatherDataClick(String cityName) {
-        InfoLocationDatabaseHelper db = new InfoLocationDatabaseHelper(getActivity());
+        DatabaseHelper db = new DatabaseHelper(getActivity());
         List<String> getAllName = db.getAllNames();
         allCityWeatherData = new ArrayList<>();
         condition = new ArrayList<>();
@@ -217,7 +216,7 @@ public class ForecastFragment extends Fragment {
 
 
     private void getWeatherData() {
-        InfoLocationDatabaseHelper db = new InfoLocationDatabaseHelper(getActivity());
+        DatabaseHelper db = new DatabaseHelper(getActivity());
         List<String> getAllName = db.getAllNames();
         allCityWeatherData = new ArrayList<>();
         condition = new ArrayList<>();
@@ -317,16 +316,6 @@ public class ForecastFragment extends Fragment {
                                         Collections.reverse(allCityWeatherData);
                                         Log.d("Test_8", "run: " + condition.size());
                                         Collections.reverse(getAllName);
-//                                        weatherDetailAdapter = new WeatherDetailAdapter(getContext(), allCityWeatherData, getAllName.get(0), condition.get(0));
-//                                        Toast.makeText(getContext(), ""+weatherDetailAdapter.getItemCount(), Toast.LENGTH_SHORT).show();
-//                                        weatherDetailAdapter.setListener(new OnItemDeletedListener() {
-//                                            @Override
-//                                            public void onItemDelect(String check) {
-//                                                Toast.makeText(getActivity(), "hello", Toast.LENGTH_SHORT).show();
-//                                                getWeatherDataClick(check);
-//                                            }
-//                                        });
-//                                        detailInfoRcv.setAdapter(weatherDetailAdapter);
                                         PagerAdapter myPagerAdapter=new PagerAdapter(getContext(), allCityWeatherData, getAllName, condition);
                                         viewPager.setAdapter(myPagerAdapter);
                                         pageIndicatorView.setViewPager(viewPager);
@@ -337,23 +326,7 @@ public class ForecastFragment extends Fragment {
                                                 getWeatherDataClick(check);
                                             }
                                         });
-//                                        pageIndicatorView.setCount(detailInfoRcv.getAdapter().getItemCount());
-//                                        detailInfoRcv.addOnScrollListener(new RecyclerView.OnScrollListener() {
-//                                            @Override
-//                                            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
-//                                                if(dx>0){
-//                                                    lastVisibleItemPosition=lastVisibleItemPosition+1;
-//                                                    Toast.makeText(getContext(), ""+lastVisibleItemPosition, Toast.LENGTH_SHORT).show();
-//                                                }else{
-//                                                    lastVisibleItemPosition=lastVisibleItemPosition-1;
-//                                                    Toast.makeText(getContext(), ""+lastVisibleItemPosition, Toast.LENGTH_SHORT).show();
-//                                                }
-////                                                if (dx > 0 && lastVisibleItemPosition < detailInfoRcv.getAdapter().getItemCount()) {
-////                                                    pageIndicatorView.setSelection(2);
-////                                                }
-////                                                super.onScrolled(recyclerView, dx, dy);
-//                                            }
-//                                        });
+
 
 
                                     } catch (JSONException e) {

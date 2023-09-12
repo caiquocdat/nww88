@@ -11,7 +11,7 @@ import dat.mid.weather.model.InfoResponse;
 import java.util.ArrayList;
 import java.util.List;
 
-public class InfoLocationDatabaseHelper extends SQLiteOpenHelper {
+public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "WeatherDatabase_1";
     private static final String TABLE_WEATHER = "weather";
     private static final int DATABASE_VERSION = 1;
@@ -29,7 +29,7 @@ public class InfoLocationDatabaseHelper extends SQLiteOpenHelper {
             + COLUMN_TEXT + " TEXT,"
             + COLUMN_TEMP_C + " REAL" + ")";
 
-    public InfoLocationDatabaseHelper(Context context) {
+    public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 

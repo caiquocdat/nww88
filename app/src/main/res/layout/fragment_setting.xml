@@ -32,7 +32,7 @@
                 <LinearLayout
                     android:padding="20dp"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/parameter_brg"
+                    android:background="@drawable/pt_brg"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
@@ -55,7 +55,7 @@
                             android:orientation="horizontal">
                             <TextView
                                 android:id="@+id/fTv"
-                                android:background="@drawable/parameter_item_un_click_brg"
+                                android:background="@drawable/un_click_brg"
                                 android:paddingLeft="40dp"
                                 android:paddingRight="40dp"
                                 android:paddingTop="5dp"
@@ -68,7 +68,7 @@
                                 android:textColor="@color/black"/>
                             <TextView
                                 android:id="@+id/cTv"
-                                android:background="@drawable/parameter_item_click_brg"
+                                android:background="@drawable/click_brg"
                                 android:paddingLeft="40dp"
                                 android:paddingRight="40dp"
                                 android:paddingTop="5dp"
@@ -103,7 +103,7 @@
                                 android:id="@+id/miTv"
                                 android:gravity="center"
                                 android:layout_weight="1"
-                                android:background="@drawable/parameter_item_un_click_brg"
+                                android:background="@drawable/un_click_brg"
                                 android:paddingTop="5dp"
                                 android:paddingBottom="5dp"
                                 android:layout_width="wrap_content"
@@ -116,7 +116,7 @@
                                 android:id="@+id/kmTv"
                                 android:gravity="center"
                                 android:layout_weight="1"
-                                android:background="@drawable/parameter_item_click_brg"
+                                android:background="@drawable/click_brg"
                                 android:paddingTop="5dp"
                                 android:paddingBottom="5dp"
                                 android:layout_width="wrap_content"
@@ -129,7 +129,7 @@
                                 android:id="@+id/mTv"
                                 android:gravity="center"
                                 android:layout_weight="1"
-                                android:background="@drawable/parameter_item_un_click_brg"
+                                android:background="@drawable/un_click_brg"
                                 android:paddingTop="5dp"
                                 android:paddingBottom="5dp"
                                 android:layout_width="wrap_content"
@@ -142,7 +142,7 @@
                                 android:id="@+id/nutTv"
                                 android:gravity="center"
                                 android:layout_weight="1"
-                                android:background="@drawable/parameter_item_un_click_brg"
+                                android:background="@drawable/un_click_brg"
                                 android:paddingTop="5dp"
                                 android:paddingBottom="5dp"
                                 android:layout_width="wrap_content"
@@ -176,7 +176,7 @@
                             <TextView
                                 android:id="@+id/inchTv"
                                 android:gravity="center"
-                                android:background="@drawable/parameter_item_un_click_brg"
+                                android:background="@drawable/un_click_brg"
                                 android:paddingTop="5dp"
                                 android:paddingBottom="5dp"
                                 android:layout_width="70dp"
@@ -188,7 +188,7 @@
                             <TextView
                                 android:id="@+id/mmTv"
                                 android:gravity="center"
-                                android:background="@drawable/parameter_item_click_brg"
+                                android:background="@drawable/click_brg"
                                 android:paddingTop="5dp"
                                 android:paddingBottom="5dp"
                                 android:layout_width="70dp"
@@ -200,7 +200,7 @@
                             <TextView
                                 android:id="@+id/mbarTv"
                                 android:gravity="center"
-                                android:background="@drawable/parameter_item_un_click_brg"
+                                android:background="@drawable/un_click_brg"
                                 android:paddingTop="5dp"
                                 android:paddingBottom="5dp"
                                 android:layout_width="70dp"
@@ -235,7 +235,7 @@
                 <LinearLayout
                     android:padding="20dp"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/parameter_brg"
+                    android:background="@drawable/pt_brg"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">

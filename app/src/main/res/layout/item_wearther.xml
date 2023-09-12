@@ -29,7 +29,7 @@
             android:layout_marginTop="3dp"
             android:layout_width="10dp"
             android:layout_height="10dp"
-            android:src="@drawable/img_search_weather"/>
+            android:src="@drawable/img_search_wea"/>
     </LinearLayout>
     <RelativeLayout
         android:id="@+id/itemRel"
@@ -42,7 +42,7 @@
             android:id="@+id/detailInfoLinear"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
-            android:background="@drawable/item_weather_brg"
+            android:background="@drawable/item_wea_brg"
             android:gravity="center_horizontal"
             android:layout_marginTop="60dp"
             android:layout_centerHorizontal="true"
@@ -80,7 +80,7 @@
                    <ImageView
                        android:layout_width="match_parent"
                        android:layout_height="wrap_content"
-                       android:src="@drawable/img_line_weather"/>
+                       android:src="@drawable/img_lin"/>
                    <TextView
                        android:layout_width="wrap_content"
                        android:layout_height="wrap_content"
@@ -102,7 +102,7 @@
                    android:layout_weight="1"
                    android:layout_width="40dp"
                    android:layout_height="30dp"
-                   android:src="@drawable/img_rain_sun"/>
+                   android:src="@drawable/img_rain_s"/>
                <LinearLayout
                    android:gravity="center"
                    android:layout_weight="1"
@@ -120,7 +120,7 @@
                    <ImageView
                        android:layout_width="match_parent"
                        android:layout_height="wrap_content"
-                       android:src="@drawable/img_line_weather"/>
+                       android:src="@drawable/img_lin"/>
                    <TextView
                        android:layout_width="wrap_content"
                        android:layout_height="wrap_content"
@@ -156,7 +156,7 @@
                     android:layout_marginTop="1dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/img_line_weather"/>
+                    android:src="@drawable/img_lin"/>
                 <TextView
                     android:layout_marginTop="2dp"
                     android:id="@+id/windTv"
@@ -182,7 +182,7 @@
             android:id="@+id/weatherIcon"
             android:layout_width="200dp"
             android:layout_height="120dp"
-            android:src="@drawable/img_rain_sun"
+            android:src="@drawable/img_rain_s"
             />
 
 

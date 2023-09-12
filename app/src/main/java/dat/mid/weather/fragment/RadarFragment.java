@@ -61,16 +61,8 @@ public class RadarFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_radar, container, false);
-//        hideSystemUI();
 
 
-//        imageView.setImageDrawable(getActivity().getResources().getDrawable(R.drawable.setting_brg));
-//        String url = "https://tile.openweathermap.org/map/pressure_new/0/0/0.png?appid=a93253b4de7c26ce1f89c0226d2ad55f";
-//        Bundle mapViewBundle = null;
-//        if (savedInstanceState != null) {
-//            mapViewBundle = savedInstanceState.getBundle(MAPVIEW_BUNDLE_KEY);
-//        }
-//        requestLocationPermission();
 
         if (isGPSEnabled()) {
 
@@ -135,42 +127,7 @@ public class RadarFragment extends Fragment {
                 }
             }
         });
-//        requestLocationPermission();
-//        // Lấy vị trí hiện tại
-//
-//        mMapView.getMapAsync(new OnMapReadyCallback() {
-//            @Override
-//            public void onMapReady(GoogleMap map) {
-//                // Do something with map
-//                if (ActivityCompat.checkSelfPermission(getContext(), android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getContext(), android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-//                } else {
-//                    ActivityCompat.requestPermissions(getActivity(), new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION_PERMISSION);
-//                }
-//                FusedLocationProviderClient fusedLocationClient = LocationServices.getFusedLocationProviderClient(getActivity());
-//                fusedLocationClient.getLastLocation().addOnSuccessListener(getActivity(), new OnSuccessListener<Location>() {
-//                    @Override
-//                    public void onSuccess(Location location) {
-//                        if (location != null) {
-//                            // Lấy thông tin vị trí hiện tại
-//                            double currentLat = location.getLatitude();
-//                            double currentLng = location.getLongitude();
-//
-//                            // Tạo một đối tượng LatLng để đại diện cho vị trí hiện tại
-//                            LatLng currentLatLng = new LatLng(currentLat, currentLng);
-//
-//                            // Đặt đánh dấu trên bản đồ tại vị trí hiện tại
-//                            map.addMarker(new MarkerOptions().position(currentLatLng).title("Vị trí hiện tại"));
-//
-//                            // Di chuyển camera đến vị trí hiện tại
-//
-//                            map.moveCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, DEFAULT_ZOOM_LEVEL));
-//                        }
-//                    }
-//                });
-//
-//
-//            }
-//        });
+
 
 
 

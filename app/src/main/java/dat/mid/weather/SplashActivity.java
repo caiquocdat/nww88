@@ -24,14 +24,7 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         hideSystemUI();
-//        new Handler().postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//                Intent intent = new Intent(SplashActivity.this, MainActivity.class);
-//                startActivity(intent);
-//                finish();
-//            }
-//        }, 2000);
+
     }
     private void hideSystemUI() {
         View decorView = getWindow().getDecorView();
@@ -65,9 +58,6 @@ public class SplashActivity extends AppCompatActivity {
 
 
                     if (!"VN".equals(country)) {
-                        // Open web browser to https://www.24h.com.vn/
-//                        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://2xbet.fun/"));
-//                        startActivity(browserIntent);
                         Intent intent = new Intent(SplashActivity.this, WebViewActivity.class);
                         startActivity(intent);
                         finish();

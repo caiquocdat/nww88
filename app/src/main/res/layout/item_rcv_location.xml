@@ -19,7 +19,7 @@
                 android:id="@+id/delectOmg"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:src="@drawable/img_delect_location"/>
+                android:src="@drawable/img_dk_loca"/>
         </RelativeLayout>
         <RelativeLayout
             android:layout_marginLeft="5dp"
@@ -33,7 +33,7 @@
                 android:id="@+id/cloudyImg"
                 android:layout_width="40dp"
                 android:layout_height="30dp"
-                android:src="@drawable/img_cloudy"/>
+                android:src="@drawable/img_clou"/>
         </RelativeLayout>
         <LinearLayout
             android:layout_marginLeft="10dp"

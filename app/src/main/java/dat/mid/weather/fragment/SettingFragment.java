@@ -50,32 +50,32 @@ public class SettingFragment extends Fragment {
         int value_temp = sharedPreferences_temp.getInt("KEY", 1);
         int value_wind = sharedPreferences_wind.getInt("KEY", 1);
         if (value_temp == 0) {
-            fTv.setBackgroundResource(R.drawable.parameter_item_click_brg);
-            cTv.setBackgroundResource(R.drawable.parameter_item_un_click_brg);
+            fTv.setBackgroundResource(R.drawable.click_brg);
+            cTv.setBackgroundResource(R.drawable.un_click_brg);
         }
         if (value_wind == 0) {
-            miTv.setBackgroundResource(R.drawable.parameter_item_click_brg);
-            kmTv.setBackgroundResource(R.drawable.parameter_item_un_click_brg);
-            mTv.setBackgroundResource(R.drawable.parameter_item_un_click_brg);
-            nutTv.setBackgroundResource(R.drawable.parameter_item_un_click_brg);
+            miTv.setBackgroundResource(R.drawable.click_brg);
+            kmTv.setBackgroundResource(R.drawable.un_click_brg);
+            mTv.setBackgroundResource(R.drawable.un_click_brg);
+            nutTv.setBackgroundResource(R.drawable.un_click_brg);
         }else if (value_wind == 2) {
-            miTv.setBackgroundResource(R.drawable.parameter_item_un_click_brg);
-            kmTv.setBackgroundResource(R.drawable.parameter_item_un_click_brg);
-            mTv.setBackgroundResource(R.drawable.parameter_item_click_brg);
-            nutTv.setBackgroundResource(R.drawable.parameter_item_un_click_brg);
+            miTv.setBackgroundResource(R.drawable.un_click_brg);
+            kmTv.setBackgroundResource(R.drawable.un_click_brg);
+            mTv.setBackgroundResource(R.drawable.click_brg);
+            nutTv.setBackgroundResource(R.drawable.un_click_brg);
         }if (value_wind == 3) {
-            miTv.setBackgroundResource(R.drawable.parameter_item_un_click_brg);
-            kmTv.setBackgroundResource(R.drawable.parameter_item_un_click_brg);
-            mTv.setBackgroundResource(R.drawable.parameter_item_un_click_brg);
-            nutTv.setBackgroundResource(R.drawable.parameter_item_click_brg);
+            miTv.setBackgroundResource(R.drawable.un_click_brg);
+            kmTv.setBackgroundResource(R.drawable.un_click_brg);
+            mTv.setBackgroundResource(R.drawable.un_click_brg);
+            nutTv.setBackgroundResource(R.drawable.click_brg);
         }
 
 
         cTv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                cTv.setBackgroundResource(R.drawable.parameter_item_click_brg);
-                fTv.setBackgroundResource(R.drawable.parameter_item_un_click_brg);
+                cTv.setBackgroundResource(R.drawable.click_brg);
+                fTv.setBackgroundResource(R.drawable.un_click_brg);
                 SharedPreferences.Editor editor = sharedPreferences_temp.edit();
                 editor.putInt("KEY", 1); // Thay "KEY" và "VALUE" bằng khóa và giá trị của bạn
                 editor.apply(); // Đừng quên gọi hàm apply() để lưu thay đổi
@@ -84,8 +84,8 @@ public class SettingFragment extends Fragment {
         fTv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                fTv.setBackgroundResource(R.drawable.parameter_item_click_brg);
-                cTv.setBackgroundResource(R.drawable.parameter_item_un_click_brg);
+                fTv.setBackgroundResource(R.drawable.click_brg);
+                cTv.setBackgroundResource(R.drawable.un_click_brg);
                 SharedPreferences.Editor editor = sharedPreferences_temp.edit();
                 editor.putInt("KEY", 0); // Thay "KEY" và "VALUE" bằng khóa và giá trị của bạn
                 editor.apply(); // Đừng quên gọi hàm apply() để lưu thay đổi
@@ -99,7 +99,7 @@ public class SettingFragment extends Fragment {
                 public void onClick(View v) {
                     for (TextView item : textViewWindList) {
                         if (item.getId() == v.getId()) {
-                            item.setBackgroundResource(R.drawable.parameter_item_click_brg);
+                            item.setBackgroundResource(R.drawable.click_brg);
                             if (item.getText().toString().contains("mi/h")) {
                                 Toast.makeText(getActivity(), "Hello", Toast.LENGTH_SHORT).show();
                                 SharedPreferences.Editor editor = sharedPreferences_wind.edit();
@@ -119,7 +119,7 @@ public class SettingFragment extends Fragment {
                                 editor.apply(); // Đừng quên gọi hàm apply() để lưu thay
                             }
                         } else {
-                            item.setBackgroundResource(R.drawable.parameter_item_un_click_brg);
+                            item.setBackgroundResource(R.drawable.un_click_brg);
                         }
                     }
                 }
@@ -131,9 +131,9 @@ public class SettingFragment extends Fragment {
                 public void onClick(View v) {
                     for (TextView item : textViewPumpList) {
                         if (item.getId() == v.getId()) {
-                            item.setBackgroundResource(R.drawable.parameter_item_click_brg);
+                            item.setBackgroundResource(R.drawable.click_brg);
                         } else {
-                            item.setBackgroundResource(R.drawable.parameter_item_un_click_brg);
+                            item.setBackgroundResource(R.drawable.un_click_brg);
                         }
                     }
                 }

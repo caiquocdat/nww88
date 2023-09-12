@@ -46,7 +46,7 @@
         <LinearLayout
             android:gravity="center"
             android:layout_marginTop="10dp"
-            android:background="@drawable/add_location_brg"
+            android:background="@drawable/add_loc_brg"
             android:padding="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

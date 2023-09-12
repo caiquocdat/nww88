@@ -47,9 +47,6 @@ public class PagerAdapter extends androidx.viewpager.widget.PagerAdapter {
     @NonNull
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
-//        if (listener != null) {
-//            listener.onItemDelect(cityNameList.get(position));
-//        }
         for (int i = 0; i < cityNameList.size(); i++) {
             Log.d("Test_30", "instantiateItem: " + cityNameList.get(i));
         }
