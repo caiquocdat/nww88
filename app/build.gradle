@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.weather'
+    namespace 'dat.mid.weather'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.weather"
+        applicationId "dat.mid.weather"
         minSdk 24
         targetSdk 33
         versionCode 1
@@ -43,4 +43,5 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation 'com.github.romandanylyk:PageIndicatorView:b1bad589b5'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.2'
 }

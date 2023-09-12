@@ -73,7 +73,7 @@
                        android:id="@+id/tempMaxTv"
                        android:layout_width="wrap_content"
                        android:layout_height="wrap_content"
-                       android:text="Cao 33°"
+                       android:text="Max 33°"
                        android:textColor="@color/white"
                        android:fontFamily="@font/poppins"
                        android:textSize="7sp"/>
@@ -84,7 +84,7 @@
                    <TextView
                        android:layout_width="wrap_content"
                        android:layout_height="wrap_content"
-                       android:text="Độ âm"
+                       android:text="Humidity"
                        android:textColor="@color/white"
                        android:fontFamily="@font/poppins"
                        android:textSize="7sp"/>
@@ -113,7 +113,7 @@
                        android:id="@+id/tempMinTv"
                        android:layout_width="wrap_content"
                        android:layout_height="wrap_content"
-                       android:text="Thấp 33°"
+                       android:text="Min 33°"
                        android:textColor="@color/white"
                        android:fontFamily="@font/poppins"
                        android:textSize="7sp"/>
@@ -124,7 +124,7 @@
                    <TextView
                        android:layout_width="wrap_content"
                        android:layout_height="wrap_content"
-                       android:text="Có mưa"
+                       android:text="Rain%"
                        android:textColor="@color/white"
                        android:fontFamily="@font/poppins"
                        android:textSize="7sp"/>
@@ -162,7 +162,7 @@
                     android:id="@+id/windTv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="TB Gió 5km/h"
+                    android:text="Average Wind 5km/h"
                     android:textColor="@color/white"
                     android:fontFamily="@font/poppins"
                     android:textSize="7sp"/>

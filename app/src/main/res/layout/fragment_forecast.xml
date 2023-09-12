@@ -4,8 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/weather_brg"
-    tools:context=".ForecastFragment">
+    android:background="#52a2bd"
+    tools:context="dat.mid.weather.fragment.ForecastFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <RelativeLayout
@@ -31,6 +31,7 @@
             app:piv_viewPager="@id/dayRcv"
             tools:ignore="MissingClass" />
         <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginRight="10dp"
             android:layout_above="@id/view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -46,7 +47,6 @@
         <androidx.recyclerview.widget.RecyclerView
             android:layout_marginLeft="20dp"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="150dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/detailRcv"/>
